@@ -1,0 +1,16 @@
+{
+  "development": {
+    "username": "admin",
+    "password": "master123",
+    "database": "todos",
+    "host": "aws-simplified.cjx5rkg1aimv.us-west-2.rds.amazonaws.com",
+    "dialect": "mysql"
+  },
+  "krishna": {
+    "username": "root",
+    "password": "Krish27!@#",
+    "database": "todos",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
