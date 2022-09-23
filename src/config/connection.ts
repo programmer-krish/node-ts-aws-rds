@@ -2,6 +2,7 @@ import { Sequelize } from "sequelize-typescript";
 import { Todos } from "../model/todos";
 import { config } from "./config";
 import { log } from "../logger";
+import { Employee } from "../model/employee";
 
 const connection = new Sequelize({
   dialect: "mysql",
@@ -11,7 +12,7 @@ const connection = new Sequelize({
   database: config.database,
   logging: false,
   port: 3306,
-  models: [Todos],
+  models: [Todos, Employee],
 });
 
 /**
