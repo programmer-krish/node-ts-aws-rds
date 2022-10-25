@@ -9,7 +9,7 @@ const postSchema = Joi.object({
 });
 
 const reqParamasSchemaId = Joi.object({
-  id: Joi.string().id().required(),
+  id: Joi.string().id()
 });
 
 const services = Joi.array().items(postSchema);
