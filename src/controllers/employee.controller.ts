@@ -1,11 +1,19 @@
 import { RequestHandler } from "express";
+import { log } from "../logger";
 
 import { Employee } from "../model/employee";
+import { getEmployees } from "../services/employee.get.service";
+import { ERRORS } from "../validation/error";
 
-export const createEmployee: RequestHandler = async (req, res, next) => {
-  let employeeData = await Employee.create({ ...req.body });
-  return res.status(200).json({
-    message: "Employee record created successfully",
-    data: employeeData,
-  });
+
+export const getEmployeeById: RequestHandler = async (req, res, next) => {
+  const { id } = req.params;
+  const employee: Employee | null = await Employee.findByPk(id);
+  return res
+    .status(200)
+    .json({ message: "Todo fetched successfully", data: employee });
 };
+
+//ALl the employee data
+
+

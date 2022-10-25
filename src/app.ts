@@ -1,7 +1,6 @@
 import express from "express";
 import morgan from "morgan";
 import cors from "cors";
-// import connection from "./config/connection";
 import todoRoutes from "./routes/todos";
 import employeeRoutes from "./routes/employee";
 import { connectDb } from "./config/connection";
