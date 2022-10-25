@@ -2,13 +2,11 @@ export interface Employees {
     first_name: string;
     last_name: string;
     email: string;
-    payment: number;
-    dob : string
+    number: string;
+    gender: string;
+    photo: string;
 }
 
-
-
-
-export interface IEmployee{
-    id : string
+export interface IEmployee {
+    id: string;
 }

@@ -30,11 +30,17 @@ export class Employee extends Model {
     type: DataType.DOUBLE,
     allowNull: true,
   })
-  payment!: string;
+  number!: string;
 
   @Column({
     type: DataType.STRING,
     allowNull: true,
   })
-  dob!: string;
+  gender!: string;
+
+  @Column({
+    type: DataType.STRING,
+    allowNull: true,
+  })
+  photo!: string;
 }
