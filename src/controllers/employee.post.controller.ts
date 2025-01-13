@@ -13,11 +13,13 @@ export const createNewEmployee = async (req: Request, res: Response) => {
     try {
         const data = await postEmployee(req.body);
         res.status(201).json(data);
-    } catch (e) {
-        log.info(e);
-        return res.status(403).json({
+    } catch (e: any) {
+        log.error("Error creating new employee:", e);
+        const statusCode = e.statusCode || 500;
+        const errorMessage = e.message || ERRORS.NOT_FOUND;
+        return res.status(statusCode).json({
             status: "error",
-            error: ERRORS.NOT_FOUND,
+            error: errorMessage,
         });
     }
 };

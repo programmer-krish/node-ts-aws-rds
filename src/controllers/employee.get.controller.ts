@@ -12,8 +12,8 @@ import { getEmployees } from "../services/employee.get.service";
 import { ERRORS } from "../validation/error";
 import { services } from '../schemas/schema';
 
-export const getEmployeeAll = async (req: Request, res: any) => {
-    const { error, value } = services.validate(res.body);
+export const getEmployeeAll = async (_: Request, res: any) => {
+    const { error } = services.validate(res.body);
     if (error) {
         return res.status(400).json({
             status: 'error',

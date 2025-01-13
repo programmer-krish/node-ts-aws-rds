@@ -4,10 +4,11 @@ import { Employee } from "../model/employee";
 
 const getEmployees = async () => {
     try {
-        const getUser = await Employee.findAll();
-        return getUser;
+        const employees = await Employee.findAll();
+        return employees;
     } catch (e) {
-        log.info(e);
+        log.error("Error fetching employees:", e);
+        throw e;
     }
 };
 

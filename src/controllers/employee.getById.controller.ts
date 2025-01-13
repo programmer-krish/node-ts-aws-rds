@@ -11,7 +11,13 @@ import { Request, Response } from "express";
 import { log } from "../logger";
 
 const getSingleEmployee = async (req: Request, res: Response) => {
-  const { value } = reqParamasSchemaId.validate(req.params.id);
+  const { error, value } = reqParamasSchemaId.validate(req.params.id);
+  if (error) {
+    return res.status(400).json({
+      status: "error",
+      error: error.details[0].message,
+    });
+  }
   try {
     const data = await getEmployeeById(value);
     res.status(200).json(data);
